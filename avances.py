@@ -36,4 +36,4 @@ if suma == 5:
 elif  suma == 10:
     print ("Saca 2 fichas")
 else:
-    print (suma)
+    print (suma)     #En caso de que no sea 5 ni 10, simplemente imprimir la suma de los dados
