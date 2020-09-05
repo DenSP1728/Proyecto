@@ -7,10 +7,7 @@ dado=int(input())
 if dado in range (1, 13):
     print("avanza")
 
-if dado == 0:
-    print ("nulo")
+else:
+    print ("número de dado inválido")
     
-elif dado >13:
-    print ("numero de dado no existe")
-    
-#Si se encuentra en rango (1, 13) es un numero existente y puede avanzar, de otro modo se considera nulo.
+    #NOTA: cambie el codigo para que fuera en un solo if
