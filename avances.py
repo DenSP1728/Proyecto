@@ -36,7 +36,8 @@ elif jugador_3 > jugador_1 and jugador_3 > jugador_2:
 #El jugador deberá sacar ficha si la suma de ambos dados es un 5, por ejemplo 2+3.
 #También es posible sacar 5 y 5 y sacar dos fichas en el mismo turno.
 
-#---OPERADORES CON DESICION---        
+#---OPERADORES CON DESICION---  
+# NOTA: En el avance 2, agregue estructura de desicion junto con operadores.
 def sacar_ficha (dados_1, dado_2):
     return dados_1, dado_2
 
