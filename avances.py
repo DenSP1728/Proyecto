@@ -14,7 +14,7 @@ else:
     print ("Color de jugador es:", "rojo")
       
       
-# Condiciones para avanzar en juego, donde el número mayor es el jugador que empieza    
+# CONDICIONES: para avanzar en juego, donde el número mayor es el jugador que empieza    
 def casillas (jugador_1, jugador_2, jugador_3):
     return jugador_1 or jugador_2 or jugador_3
 
@@ -53,3 +53,18 @@ elif  suma == 10:
     print ("Saca 2 fichas")
 else:
     print (suma)     #En caso de que no sea 5 ni 10, simplemente imprimir la suma de los dados
+    
+
+  #---Para hacer pruebas con datos de juego Parchis con Quiz----
+def dado (dados):
+    return dados
+
+dado=int(input())
+
+if dado in range (1, 13):
+    print("avanza")
+
+else:
+    print ("número de dado inválido")
+    
+    #NOTA: cambie el codigo para que fuera en un solo if
