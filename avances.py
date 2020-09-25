@@ -1,3 +1,5 @@
+import random
+
 #AVANCE 3 ESTRUCTURA DE DESICIONES.
 #Eleccion de color para el jugador, escogiendo un color del 1 al 3, si no le toca verde 
 def elegir_color (color):
@@ -37,23 +39,18 @@ elif jugador_3 > jugador_1 and jugador_3 > jugador_2:
 #También es posible sacar 5 y 5 y sacar dos fichas en el mismo turno.
 
 #---OPERADORES CON DESICION---  
-# NOTA: En el avance 2, agregue estructura de desicion junto con operadores.
-def sacar_ficha (dados_1, dado_2):
-    return dados_1, dado_2
-
-dado_1=int(input())
-dado_2=int(input())
-
-suma = dado_1 + dado_2
-print(suma)
-
-if suma == 5:
-    print ("Saca 1 ficha")
+# NOTA AVANCE CICLO: Ciclo while de tiro, para que solo hasta que saque 5.
+       # marque que puede sacar ficha.
+while True:
+    dado = random.randint(1,6)
+    print ("Sin ficha- Dado arroja:", dado) 
     
-elif  suma == 10:
-    print ("Saca 2 fichas")
-else:
-    print (suma)     #En caso de que no sea 5 ni 10, simplemente imprimir la suma de los dados
+    if dado == 5:
+        print ("Sacas ficha")
+        
+    x = input("¿Volver a tirar?")
+    if x == "no":
+        break
     
 
   #---Para hacer pruebas con datos de juego Parchis con Quiz----
