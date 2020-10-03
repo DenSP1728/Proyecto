@@ -1,5 +1,104 @@
 import random
 
+#Definimos el tablero
+tablero= [["*****","*****","*****","*****","_____","_____","_____","*****","*****","*****","*****"],
+          ["*****","*****","*****","*****","_____","_____","_____","*****","*****","*****","*****"],
+          ["*****","*****","*****","*****","_____","_____","_____","*****","*****","*****","*****"],
+          [" A1 /"," A2 /","*****","*****","_____","_____","_____","*****","*****","*****","*****"],
+          ["_____","_____","_____","_____","_____","_____","_____","_____","_____","_____","_____"],
+          ["_____","_____","_____","_____","_____"," Meta","_____","_____","_____","_____","_____"],
+          ["_____","_____","_____","_____","_____","_____","_____","_____","_____","_____","_____"],
+          ["_____","_____","_____","_____","_____","_____","_____"," B1 /"," B2 /","*****","*****"],
+          ["*****","*****","*****","*****","_____","_____","_____","*****","*****","*****","*****"],
+          ["*****","*****","*****","*****","_____","_____","_____","*****","*****","*****","*****"],
+          ["*****","*****","*****","*****","_____","_____","_____","*****","*****","*****","*****"]]
+
+def menu():
+    print('Hola, este es el juego de Parchis')
+    print()
+    print('Presiona 1 para jugar')
+    print()
+    print('Presiona 2 para ver instrucciones')
+    print()
+    print('Presiona 3 para salir')
+    a = input('Respuesta: ')
+    if a == '1':
+         jugar()   #funcion que conecte con menu, sin definir
+    elif a == '2':
+         instrucciones()   #sin definir
+    elif a == '3':
+         salir()   #sin definir 
+def dado():
+    dado = random.randint (1,6)
+    
+    if dado == 1:
+        dado1 = [[" __"," __"," __"],
+                 ["/  ","   ","   /"],
+                 ["/  "," o ","   /"],
+                 ["/_ "," __"," __/"]]
+        for i in range (4):
+            for j in range (3):
+                print (dado1[i][j], end = "")
+            print ()
+        print ("Sacaste", dado)
+    
+    elif dado == 2:
+        dado1 = [[" __"," __"," __"],
+                 ["/o ","   ","   /"],
+                 ["/  ","   ","   /"],
+                 ["/_ "," __"," _o/"]]
+        for i in range (4):
+            for j in range (3):
+                print (dado1[i][j], end = "")
+            print ()
+        print ("Sacaste", dado)
+    
+    elif dado == 3:
+        dado1 = [[" __"," __"," __"],
+                 ["/o ","   ","   /"],
+                 ["/  "," o ","   /"],
+                 ["/_ "," __"," _o/"]]
+        for i in range (4):
+            for j in range (3):
+                print (dado1[i][j], end = "")
+            print ()
+        print ("Sacaste", dado)
+        
+    elif dado == 4:
+        dado1 = [[" __"," __"," __"],
+                 ["/o ","   ","  o/"],
+                 ["/  ","   ","   /"],
+                 ["/o "," __"," _o/"]]
+        for i in range (4):
+            for j in range (3):
+                print (dado1[i][j], end = "")
+            print ()
+        print ("Sacaste", dado)
+        
+    elif dado == 5:
+        dado1 = [[" __"," __"," __"],
+                 ["/o ","   ","  o/"],
+                 ["/  "," o ","   /"],
+                 ["/o "," __"," _o/"]]
+        for i in range (4):
+            for j in range (3):
+                print (dado1[i][j], end = "")
+            print ()
+        print ("Sacaste", dado)
+        
+    else:
+        dado1 = [[" __"," __"," __"],
+                 ["/o ","   ","  o/"],
+                 ["/o ","   ","  o/"],
+                 ["/o "," __"," _o/"]]
+        for i in range (3):
+            for j in range (4):
+                print (dado1[i][j], end = "")
+            print ()
+        print ("Sacaste", dado)
+print(dado())
+
+#_______MODIFICAR_______
 #AVANCE 3 ESTRUCTURA DE DESICIONES.
 #Eleccion de color para el jugador, escogiendo un color del 1 al 3, si no le toca verde 
 def elegir_color (color):
