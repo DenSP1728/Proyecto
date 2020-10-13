@@ -41,71 +41,8 @@ def instrucciones():
     salir()    
 
           #_____________ Modificacion de codigo ____________
-def ubicacion_ficha1(x):   #Para ficha A1
-    a=0
-    b=0
-    f=1
-    
-    for i in range(11):
-        for j in range(11):
-            if tablero[i][j]==' A1 /':
-                print('La ubicacion es', i, j)
-                a=i
-                b=j
-                break
-            else:
-                pass
-    print(a,b)
-    pasos(x,a,b,f)
-        
-def ubicacion_ficha2(x):   #Para ficha A2
-    a=0
-    b=0
-    f=2
-    for i in range(11):
-        for j in range(11):
-            if tablero[i][j]==' A2 /':
-                print('La ubicacion es', i, j)
-                a=i
-                b=j
-                break
-            else:
-                pass
-    pasos(x,a,b,f)
-    
-def ubicacion_fichaB(x):     #Para ficha B1
-    a=0
-    b=0
-    f=1
-    for i in range(11):
-        for j in range(11):
-            if tablero[i][j]==' B1 /':
-                print('La ubicacion es', i, j)
-                a=i
-                b=j
-                break
-            else:
-                pass
-    pasos_B(x,a,b,f)
-    
-def ubicacion_fichaB2(x):     #Para ficha B2
-    a=0
-    b=0
-    f=1
-    for i in range(11):
-        for j in range(11):
-            if tablero[i][j]==' B1 /':
-                print('La ubicacion es', i, j)
-                a=i
-                b=j
-                break
-            else:
-                pass
-    pasos_B(x,a,b,f)
           
-def pasos(p,x,v,f):    
-    #x representa fila
-    #v es la columna
+def pasosA(x,f):    
     #f es la ficha que mueve A1 o A2
     matriz_jugador= [[0 ,0 ,0, 0, 1,40,39, 0, 0, 0, 0],
                      [0 ,0, 0, 0, 2,41,38, 0, 0, 0, 0],
@@ -118,109 +55,9 @@ def pasos(p,x,v,f):
                      [0 ,0, 0, 0,17, 0,23, 0, 0, 0, 0],
                      [0 ,0, 0, 0,18, 0,22, 0, 0, 0, 0],
                      [0 ,0, 0, 0,19,20,21, 0, 0, 0, 0]]
-    #Son los pasos que deben dar en el tablero parchis 
-    k=x
-    t=v
-    #k es fila y t es columna
-    u=0
-    y=matriz_jugador[x][v]
-    cont=0
-    while cont < p:
-        #Aumenta filas
-        if y==matriz_jugador[0][4] or y==matriz_jugador[1][4] or y==matriz_jugador[2][4] or y==matriz_jugador[3][4]:
-            y==matriz_jugador[x + 1][v]
-            cont= cont + 1
-            x= x + 1
-        
-        #Disminuye filas
-        elif y==matriz_jugador[4][4] or y==matriz_jugador[4][3] or y==matriz_jugador[4][2] or y==matriz_jugador[4][1]:
-            y==matriz_jugador[x][v-1]
-            cont= cont + 1
-            v= v - 1
-        
-        elif y==matriz_jugador[4][0] or y==matriz_jugador[5][0]:
-            y==matriz_jugador[x + 1][v]
-            cont= cont + 1
-            x= x + 1
-        elif y==matriz_jugador[6][0] or y==matriz_jugador[6][1] or y==matriz_jugador[6][2] or y==matriz_jugador[6][3]:
-            y==matriz_jugador[x][v+1]
-            cont= cont + 1
-            v = v + 1
-        elif y==matriz_jugador[6][4] or y==matriz_jugador[7][4] or y==matriz_jugador[8][4] or y==matriz_jugador[9][4]:
-            y==matriz_jugador[x + 1][v]
-            cont= cont + 1
-            x= x + 1
-        elif y==matriz_jugador[10][4] or y==matriz_jugador[10][5]:
-            y==matriz_jugador[x][v+1]
-            cont= cont + 1
-            v= v + 1
-        elif y==matriz_jugador[10][6] or y==matriz_jugador[9][6] or y==matriz_jugador[8][6] or y==matriz_jugador[7][6]:
-            y==matriz_jugador[x - 1][v]
-            cont= cont + 1
-            x= x - 1
-        elif y==matriz_jugador[6][6] or y==matriz_jugador[6][7] or y==matriz_jugador[6][8] or y==matriz_jugador[6][9]:
-            y==matriz_jugador[x][v+1]
-            cont= cont + 1
-            v= v + 1
-        elif y==matriz_jugador[6][10] or y==matriz_jugador[5][10]:
-            y==matriz_jugador[x - 1][v]
-            cont= cont + 1
-            x= x - 1
-        elif y==matriz_jugador[4][10] or y==matriz_jugador[4][9] or y==matriz_jugador[4][8] or y==matriz_jugador[4][7]:
-            y==matriz_jugador[x][v-1]
-            cont= cont + 1
-            v= v - 1
-        elif y==matriz_jugador[4][6] or y==matriz_jugador[3][6] or y==matriz_jugador[2][6] or y==matriz_jugador[1][6]:
-            y==matriz_jugador[x - 1][v]
-            cont= cont + 1
-            x= x - 1
-        elif y==matriz_jugador[0][6]:
-            y==matriz_jugador[x][v-1]
-            cont= cont + 1
-            v= v - 1
-        elif y==matriz_jugador[0][5] or y==matriz_jugador[1][5] or y==matriz_jugador[2][5] or y==matriz_jugador[3][5]:
-            y==matriz_jugador[x + 1][v]
-            cont= cont + 1
-            x=x + 1
-        elif y==matriz_jugador[4][5] and p==1 or p-cont==1:
-            print('Coronaste ficha')
-            tablero[k][t]='____/'
-            u=1
-            cont=7
-            if f==1:
-                tablero[0][0]='1****'
-            else:
-                tablero[0][1]='2****'
-        
-        #Si la ficha no llega exactamente, disminuye las fichas
-        elif y==matriz_jugador[4][5] and p>1 or p-cont>1:
-            g= p - cont
-            y= matriz_jugador[x - g][v]
-            cont = 7
-            x = x - g + 2
-        else:
-            cont=7
-    print('La posicion final', x,v)
-    
-    if tablero[x][v]==' A1 /' and f==1:
-        tablero[x][v]=' A1 /'
-        
-    elif tablero[x][v]==' A2 /' and f==2:
-        tablero[x][v]=' A2 /'
-    elif tablero[x][v]==' B1 /':
-        comer(x,v,k,t,f,1)
-    
-    elif tablero[x][v]==' B2 /':
-        comer(x,v,k,t,f,2)
-    
-    else:
-        actualizar(x,v,k,t,f)   
-
-def pasos_B(p,x,v,f,e):
-    #x representa fila
-    #v es la columna
+   
+def pasos_B(p,f):
     #f es la ficha que mueve B1 o B2
-    #e en caso de ser la maquina 
     matriz_jugador= [[0 , 0, 0, 0,21,20,19, 0, 0, 0, 0],
                      [0 , 0, 0, 0,22, 0,18, 0, 0, 0, 0],
                      [0 , 0, 0, 0,23, 0,17, 0, 0, 0, 0],
@@ -232,115 +69,9 @@ def pasos_B(p,x,v,f,e):
                      [0 , 0, 0, 0,37,42, 3, 0, 0, 0, 0],
                      [0 , 0, 0, 0,38,41, 2, 0, 0, 0, 0],
                      [0 , 0, 0, 0,39,40,21, 0, 0, 0, 0]]
-    #Son los pasos que deben dar en el tablero parchis 
-    k=x
-    t=v
-    #k es fila y t es columna
-    u=0
-    y=matriz_jugador[x][v];
-    cont=0
-    while cont < p:
-        #Aumenta filas
-        if y==matriz_jugador[0][4] or y==y==matriz_jugador[1][4] or y==matriz_jugador[2][4] or y==matriz_jugador[3][4]:
-            y==matriz_jugador[x + 1][v]
-            cont= cont + 1
-            x= x + 1
-        
-        #Disminuye filas
-        elif y==matriz_jugador[4][4] or y==y==matriz_jugador[4][3] or y==matriz_jugador[4][2] or y==matriz_jugador[4][1]:
-            y==matriz_jugador[x][v-1]
-            cont= cont + 1
-            v= v - 1
-        
-        elif y==matriz_jugador[4][0] or y==y==matriz_jugador[5][0]:
-            y==matriz_jugador[x + 1][v]
-            cont= cont + 1
-            x= x + 1
-        elif y==matriz_jugador[6][0] or y==y==matriz_jugador[6][1] or y==matriz_jugador[6][2] or y==matriz_jugador[6][3]:
-            y==matriz_jugador[x][v+1]
-            cont= cont + 1
-            v = v + 1
-        elif y==matriz_jugador[6][4] or y==y==matriz_jugador[7][4] or y==matriz_jugador[8][4] or y==matriz_jugador[9][4]:
-            y==matriz_jugador[x + 1][v]
-            cont= cont + 1
-            x= x + 1
-        elif y==matriz_jugador[10][4]:
-            y==matriz_jugador[x][v+1]
-            cont= cont + 1
-            v= v + 1
-        elif y==matriz_jugador[10][6] or y==y==matriz_jugador[9][6] or y==matriz_jugador[8][6] or y==matriz_jugador[7][6]:
-            y==matriz_jugador[x - 1][v]
-            cont= cont + 1
-            x= x - 1
-        elif y==matriz_jugador[6][6] or y==y==matriz_jugador[6][7] or y==matriz_jugador[6][8] or y==matriz_jugador[6][9]:
-            y==matriz_jugador[x][v+1]
-            cont= cont + 1
-            v= v + 1
-        elif y==matriz_jugador[6][10] or y==y==matriz_jugador[5][10]:
-            y==matriz_jugador[x - 1][v]
-            cont= cont + 1
-            x= x - 1
-        elif y==matriz_jugador[4][10] or y==y==matriz_jugador[4][9] or y==matriz_jugador[4][8] or y==matriz_jugador[4][7]:
-            y==matriz_jugador[x][v-1]
-            cont= cont + 1
-            v= v - 1
-        elif y==matriz_jugador[4][6] or y==y==matriz_jugador[3][6] or y==matriz_jugador[2][6] or y==matriz_jugador[1][6]:
-            y==matriz_jugador[x - 1][v]
-            cont= cont + 1
-            x= x - 1
-        elif y==matriz_jugador[0][6] or y==matriz_jugador[0][5]:
-            y==matriz_jugador[x][v-1]
-            cont= cont + 1
-            v= v - 1
-        elif y==matriz_jugador[10][5] or y==y==matriz_jugador[9][5] or y==matriz_jugador[8][5] or y==matriz_jugador[7][5]:
-            y==matriz_jugador[x - 1][v]
-            cont= cont + 1
-            x= x - 1
-        elif y==matriz_jugador[6][5] and p==1 or p-cont==1:
-            print('Coronaste ficha')
-            tablero[k][t]='____/'
-            u=1
-            cont=7
-            
-            if f==1:
-                tablero[10][10]='1****'
-            else:
-                tablero[10][9]='2****'
-        
-        #avanzar y devolver a la llegada 
-        elif y==matriz_jugador[6][5] and p>1 or cont - p >1:
-            g= p - cont -2
-            y= matriz_jugador[x + g][v]
-            cont = 7
-            x = x + g 
-        else:
-            print('Algo anda mal')
-            
-    print('La posicion final', x,v)
-    if tablero[x][v]==' B2 /' and f==1:
-        print('No puede estar en la misma posicion')
-        #seleccionar_ficha(p, e)
-    elif tablero[x][v]==' B1 /' and f==2:
-        print('No puede estar en la misma posicion')
-        #seleccionar_ficha(p, e)
-    
-    elif tablero[x][v]==' B1 /' and f==1:
-        tablero[x][v]=' B1 /'
-        
-    elif tablero[x][v]==' B2 /' and f==2:
-        tablero[x][v]=' B2 /'
-        #mostrar2()
-        
-    elif tablero[x][v]==' A1 /':
-        comer1(x,v,k,t,f,1)
-    elif tablero[x][v]==' A2 /':
-        comer1(x,v,k,t,f,2)
-    
-    else:
-        actualizarb(x,v,k,t,f)
          #_____________ Modificacion de codigo ____________
 
-def dado(fic):  #fichas
+def dado(f):  #fichas
     dado = random.randint (1,6)
     
     if dado == 1:
@@ -410,9 +141,9 @@ def dado(fic):  #fichas
         print ("Sacaste", dado)
     limpiar()
     
-    if fic==1:
+    if f==1:
         sacar_fichaA(dado)   #Asiganda a jugador 1
-    elif fic==2:
+    elif f==2:
         sacar_fichaB(dado,2)   #Para jugador 2
     else:                   # 2 si es contra maquina
         sacar_fichaB(dado, 1)  
