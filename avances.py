@@ -41,7 +41,7 @@ def instrucciones():
     salir()    
 
           #_____________ Modificacion de codigo ____________
-          
+# matriz del primer jugador           
 def pasosA(x,f):    
     #f es la ficha que mueve A1 o A2
     matriz_jugador= [[0 ,0 ,0, 0, 1,40,39, 0, 0, 0, 0],
@@ -55,7 +55,8 @@ def pasosA(x,f):
                      [0 ,0, 0, 0,17, 0,23, 0, 0, 0, 0],
                      [0 ,0, 0, 0,18, 0,22, 0, 0, 0, 0],
                      [0 ,0, 0, 0,19,20,21, 0, 0, 0, 0]]
-   
+
+          # matriz del segundo jugador    
 def pasos_B(p,f):
     #f es la ficha que mueve B1 o B2
     matriz_jugador= [[0 , 0, 0, 0,21,20,19, 0, 0, 0, 0],
@@ -148,6 +149,7 @@ def dado(f):  #fichas
     else:                   # 2 si es contra maquina
         sacar_fichaB(dado, 1)  
 
+# Para empezar el juego
 def game(x):
     limpiar()
     j1=input('Ingresa nombre del Jugador 1: ')
@@ -162,7 +164,7 @@ def game(x):
         print()
     q = 0
     while q==0 and x==2:
-        
+        #Si las fichas llegan a meta, imprime lo siguiente:
         if tablero[0][0]=='1****' and tablero[0][1]=='2****':
             print('Gano', j1, '¡Congratulations!')
             input('Presiona Intro para salir')
@@ -172,6 +174,7 @@ def game(x):
             input('Presiona Intro para salir')
             salir()
         else:
+          #En dado caso de que todavia no termine seguiran jugando
             print('Juega', j1)
             input('Presiona Intro para continuar')
             dado(1)
@@ -179,7 +182,7 @@ def game(x):
             input('Presiona Intro para continuar')
             dado(2)
     while q==0 and x==1:
-        
+        # Mismo caso, pero aqui se juega contra maquina 
         if tablero[0][0]=='1****' and tablero[0][1]=='2****':
             print('Gano', j1, '¡Congratulations!')
             input('Presiona Intro para salir')
@@ -195,8 +198,8 @@ def game(x):
             print('Sigue jugando la maquina')
             input('Presiona Intro para continuar')
             dado(0)
-            #global tablero
-
+            
+# ___Seleccion de jugadores___
 def jugadores():
     limpiar()
     print('Selecciona los jugadores')
@@ -213,7 +216,8 @@ def jugadores():
     else:
         limpiar()
         menu()
-        
+ 
+# Menu que conecta con las otras funciones principales 
 def menu():  
     print('Hola, este es el juego de Parchis')
     print()
@@ -232,22 +236,6 @@ def menu():
 menu()
 
 #_______MODIFICAR_______
-#AVANCE 3 ESTRUCTURA DE DESICIONES.
-#Eleccion de color para el jugador, escogiendo un color del 1 al 3, si no le toca verde 
-def elegir_color (color):
-    return color
-color = int (input("Escoge color:   "))
-
-if color == 1:
-    print ("Color de jugador es:", "amarillo")
-elif color == 2:
-    print ("Color de jugador es:", "verde")
-elif color == 3:
-    print ("Color de jugador es:", "azul")
-else:
-    print ("Color de jugador es:", "rojo")
-      
-     
 
 
 #El jugador deberá sacar ficha si la suma de ambos dados es un 5, por ejemplo 2+3.
