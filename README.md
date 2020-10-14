@@ -17,3 +17,8 @@ python avances.py
 o abrir en Thonny o cualquier editor de python y dar boton de play.
 
 Aparece un menu donde te pregunta que quieres hacer, jugar, ver instrucciones o salir de juego; al contestar te mandara a esa sección, si es ver instrucciones, apareceran las reglas, al terminar de leerlas te permite regresar a menú, en caso de seleccionar jugar, pregunta si jugaras solo o 1 contrar 1, seleccionas la opción y antes de jugar ingresaras nombre para que reconozcas cuando es tu turno; si en manu seleccionaste salir, simplemente terminara el programa.
+
+# Bibiotecas incluidas 
+random: Ofrece generadores de números pseudo-aleatorios para varias distribuciones. En este caso, permite el lanzamiento de un dado de forma aleatoria en un rango de 1 a 6.
+sys: Tiene varias funcionalidades. Para el proyecto es utilizado para forzar el cierra del programa, es decir, cuando termineel juego o sea seleccionado en menú.
+os: El módulo os también nos provee de un diccionario con las variables de entorno relativas al sistema. El programa cuenta con una funcion para limpiar el codigo en pantalla, dependiendo del sistema operativo ejecutara la accion de limpiar.
