@@ -1,0 +1,21 @@
+Sub-Competencia: 
+	Aplica funciones de manera adecuada para segmentar el código y mantener reusabilidad y modularidad (avance 2)
+
+Error original: Tenía el 90% de mi código amontonado sin secuencias, no tenia orden.
+
+
+Cambio realizado: Generé una secuencias de funciones enlazadas.
+       
+      def menu()
+      def jugar()
+      def instrucciones()
+      def salir()
+
+Líneas de código donde se ve la corrección: 
+
+	518 a 533  menu
+	500 a 515  jugadores
+	31 a 43  instrucciones
+	25 a 29  salir
+        19 a 23  limpiar
+
