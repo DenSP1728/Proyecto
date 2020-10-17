@@ -20,5 +20,7 @@ Aparece un menu donde te pregunta que quieres hacer, jugar, ver instrucciones o 
 
 # Bibiotecas incluidas 
 random: Ofrece generadores de números pseudo-aleatorios para varias distribuciones. En este caso, permite el lanzamiento de un dado de forma aleatoria en un rango de 1 a 6.
+
 sys: Tiene varias funcionalidades. Para el proyecto es utilizado para forzar el cierra del programa, es decir, cuando termineel juego o sea seleccionado en menú.
+
 os: El módulo os también nos provee de un diccionario con las variables de entorno relativas al sistema. El programa cuenta con una funcion para limpiar el codigo en pantalla, dependiendo del sistema operativo ejecutara la accion de limpiar.
